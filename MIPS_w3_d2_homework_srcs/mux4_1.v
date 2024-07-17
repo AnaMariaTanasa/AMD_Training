@@ -21,9 +21,9 @@
 
 
 module mux4_1 #(parameter n=32)( input [n-1:0] di1,input [n-1:0] di2,input [n-1:0] di3,input [n-1:0] di4, input [1:0] sel,output reg [n-1:0] do);
-always@(di1 or di2 or di3 or di4)
+  always@(*)
 begin
-case(sel)
+  case({sel})
 2'b00:do=di1;
 2'b01:do=di2;
 2'b10:do=di3;
